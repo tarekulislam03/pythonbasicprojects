@@ -1,1 +1,36 @@
+tasks = []
+
+while True:
+    print("-- To do list --")
+    print("1. Add new tasks")
+    print("2. View Tasks")
+    print("3. Remove Tasks")
+    print("4. Quit")
+
+    a = int(input("Choose a options: "))
+
+    if a == 1:
+        task = tasks.append(input("Enter a task: "))
+        print("Task added !!\n")
+    elif a == 2:
+        if not tasks:
+            print("No tasks added yet!")
+        else:
+            print("-- Tasks --\n")
+            for i,t in enumerate(tasks, start=1):
+
+                print(f"{i}. {t}\n")
+    elif a == 3:
+        if not tasks:
+            print("No tasks added yet!")
+        else:
+            tasks_no = int(input("Enter tasks no. to remove: "))
+            if 1<= tasks_no <= len(tasks):
+                remove = tasks.pop(tasks_no - 1)
+                print("Task Removed!")
+    elif a == 4:
+        print("Thanks for using this! Good Bye.")
+        break
+    else:
+        print("Invalid option")
 
