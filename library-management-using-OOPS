@@ -1,0 +1,13 @@
+class Library:
+    def book(self):
+        books = []
+        while True:
+            a = input("Enter the book you want to add: ")
+            books.append(a)
+            length = len(books)
+            add = input("Do you want to add more books? Type Y for Yes and N for No: ")
+            if add.lower() == "y":
+                continue
+            return (books, length)
+x = Library()
+print(x.book())
